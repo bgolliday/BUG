@@ -1,0 +1,82 @@
+head
+  title Beautiful Unique Girls
+  link(rel="stylesheet", href="/stylesheets/reset.css")
+  link(rel="stylesheet", href="/stylesheets/common.css")
+  link(rel="stylesheet", href="/stylesheets/style.css")
+  link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Lato:400,700', rel='stylesheet')
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  script(src="//code.jquery.com/jquery-2.1.1.min.js")
+  script#snipcart(src='https://cdn.snipcart.com/scripts/2.0/snipcart.js', data-api-key=ctx.snipcartKey, data-autopop="false")
+  link(rel='stylesheet', href='https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css', type='text/css')
+  link(rel="stylesheet", href="/stylesheets/snipcart-style.css")
+  script(src="/javascript/functions.js")
+  
+  // Required for Previews and Experiments
+  script
+    = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
+  script(src="//static.cdn.prismic.io/prismic.min.js")
+
+body
+  
+  include ./partials/header.pug
+
+
+
+
+
+// Begin MailChimp Signup Form
+link(href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css', rel='stylesheet', type='text/css')
+style(type='text/css').
+  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+  We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+#mc_embed_signup
+  form#mc-embedded-subscribe-form.validate(action='https://beautifuluniquegirls.us19.list-manage.com/subscribe/post?u=62feddbf3a922132eb7e80bb1&id=e64d1044b1', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+    #mc_embed_signup_scroll
+      h2 Subscribe to our mailing list
+      .indicates-required
+        span.asterisk *
+        |  indicates required
+      .mc-field-group
+        label(for='mce-EMAIL')
+          | Email Address  
+          span.asterisk *
+        input#mce-EMAIL.required.email(type='email', value='', name='EMAIL')
+      .mc-field-group
+        label(for='mce-FNAME') First Name 
+        input#mce-FNAME(type='text', value='', name='FNAME')
+      .mc-field-group
+        label(for='mce-LNAME') Last Name 
+        input#mce-LNAME(type='text', value='', name='LNAME')
+      .mc-field-group.size1of2
+        label(for='mce-BIRTHDAY-month') Birthday 
+        .datefield
+          span.subfield.monthfield
+            input#mce-BIRTHDAY-month.birthday(type='text', pattern='[0-9]*', value='', placeholder='MM', size='2', maxlength='2', name='BIRTHDAY[month]')
+          |  / 
+          span.subfield.dayfield
+            input#mce-BIRTHDAY-day.birthday(type='text', pattern='[0-9]*', value='', placeholder='DD', size='2', maxlength='2', name='BIRTHDAY[day]')
+          span.small-meta.nowrap ( mm / dd )
+      #mce-responses.clear
+        #mce-error-response.response(style='display:none')
+        #mce-success-response.response(style='display:none')
+      // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+      div(style='position: absolute; left: -5000px;', aria-hidden='true')
+        input(type='text', name='b_62feddbf3a922132eb7e80bb1_e64d1044b1', tabindex='-1', value='')
+      .clear
+        input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')
+script(type='text/javascript', src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js')
+script(type='text/javascript').
+  (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
+// End mc_embed_signup
+
+
+
+
+include ./partials/footer.pug
+  
+  script#cart-content-text(type='text/template').
+    <div class="custom-snipcart-footer-text">
+    
+    </div>
